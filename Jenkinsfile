@@ -14,7 +14,7 @@ pipeline {
     parameters {
         string(name: 'PERSON', defaultValue: 'mr.jenkins', description: 'How should I say hello?')
         string(name: 'BIOGRAPHY', defaultValue: '', description: 'enter some info about the person')
-        string(name: 'TOGGLE', defaultValue: 'true', description: 'toggle this value')
+        string(name: 'TOGGLE', defaultValue: "true", description: 'toggle this value')
         string(name: 'CHOICE', defaultValue: ['one','two','three'], description: 'pick something')
         string(name: 'PASSWORD', defaultValue: 'secret', description: 'enter a password')
 
