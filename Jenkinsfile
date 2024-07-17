@@ -35,7 +35,6 @@ pipeline {
                 sh """
                   echo "here i wrote shell scrpit"
                   echo "$GREETING"
-                  sleep 10
                 """  
             }
         }
