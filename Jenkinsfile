@@ -35,6 +35,7 @@ pipeline {
                 sh """
                   echo "here i wrote shell scrpit"
                   echo "$GREETING"
+                  echo "hello sowjnaya.....ur webhook is successful"
                 """  
             }
         }
