@@ -11,6 +11,14 @@ pipeline {
         timeout(time: 1 , unit : 'HOURS')
         disableConcurrentBuilds()
     }
+    parameters {
+        string(name: 'PERSON', defaultValue: 'mr.jenkins', description: 'How should I say hello?')
+        string(name: 'BIOGRAPHY', defaultValue: '', description: 'enter some info about the person')
+        string(name: 'TOGGLE', defaultValue: true, description: 'toggle this value')
+        string(name: 'CHOICE', choices: ['one','two','three'], description: 'pick something')
+        string(name: 'PASSWORD', defaultValue: 'secret', description: 'enter a password')
+
+    }
     stages {
         stage('Build') { 
             steps {
@@ -28,6 +36,17 @@ pipeline {
                   echo "here i wrote shell scrpit"
                   echo "$GREETING"
                   sleep 10
+                """  
+            }
+        }
+        stage('check params') { 
+            steps {
+                sh """
+                  echo "hello ${params.PERSON}"
+                  echo "biograpthy: ${params.BIOGRAPHY}"
+                  echo "toggle: ${params.TOGGLE}"
+                  echo "choice: ${params.CHOICE}"
+                  echo "password: ${params.PASSWORD}"
                 """  
             }
         }
